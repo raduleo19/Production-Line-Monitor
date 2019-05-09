@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    a {
+      font-size: 0.5em;
+    }
+
+    a:link,
+    a:visited {
+      background-color: #5CB85C;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover,
+    a:active {
+      background-color: #449D44;
+    }
+
+    * {
+      font-family: myriad-pro-semi-condensed, Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      min-height: 100%;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: "header header header header""content1 content2 content3 content4""footer footer footer footer"
+    }
+
+    .grid {
+      background-color: #444;
+      color: #fff;
+      padding: 25px;
+      font-size: 2rem;
+      border-style: solid;
+      border-width: 2px 2px 2px 2px;
+      border-color: gray;
+    }
+
+    .header {
+      grid-area: header;
+      background: white;
+      color: #0F3B89;
+      border-style: solid;
+      border-width: 0px 0px 3px 0px;
+      border-color: gray;
+    }
+
+    .content1 {
+      grid-area: content1;
+      background: #A7A9AD;
+      margin: 0;
+    }
+
+    .content2 {
+      grid-area: content2;
+      background: #2C5EA4;
+      margin: 0;
+    }
+
+    .content3 {
+      grid-area: content3;
+      background: #A7A9AD;
+      margin: 0;
+    }
+
+    .content4 {
+      grid-area: content4;
+      background: #2C5EA4;
+      margin: 0;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #A7A9AD;
+      margin: 0;
+      text-align: center;
+      background: white;
+      color: #0F3B89;
+      font-size: 18px;
+      border-style: solid;
+      border-width: 3px 0px 0px 0px;
+      border-color: gray;
+    }
+
+    .titles {
+      border-style: solid;
+      border-width: 3px 3px 3px 3px;
+      border-color: gray;
+    }
+
+    .datalogs {
+      height: calc(100vh - 350px);
+      margin: auto;
+      overflow-y: scroll;
+      border: none;
+      width: 100%;
+    }
+
+    @media (max-width:600px) {
+      .container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
+        grid-template-areas: "header""content1""content2""content3""content4""footer"
+      }
+    }
+
+    @media (min-width:600px) and (max-width:1200px) {
+      .datalogs {
+        margin: auto;
+        overflow-y: scroll;
+        border: none;
+        width: 100%;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: "header header""content1 content2""content3 content4""footer footer"
+      }
+
+      .content3 {
+        background: #2C5EA4;
+      }
+
+      .content4 {
+        background: #A7A9AD;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="grid header">PRODUCTION LINE MONITOR</div>
+
+    <div class="grid content1">
+      <div class="titles">Band 1</div>
+      <iframe class="datalogs" src="log1.txt"></iframe>
+      <a href="fullLog1.txt" download="log1.txt">Download logs</a>
+    </div>
+
+    <div class="grid content2">
+      <div class="titles">Band 2</div>
+      <iframe class="datalogs" src="log2.txt"></iframe>
+      <a href="fullLog2.txt" download="log2.txt">Download logs</a>
+    </div>
+
+    <div class="grid content3">
+      <div class="titles">Band 3</div>
+      <iframe class="datalogs" src="log3.txt"></iframe>
+      <a href="fullLog3.txt" download="log3.txt">Download logs</a>
+    </div>
+
+    <div class="grid content4">
+      <div class="titles">Band 4</div>
+      <iframe class="datalogs" src="log4.txt"></iframe>
+      <a href="fullLog4.txt" download="log4.txt">Download logs</a>
+    </div>
+
+    <div class="grid footer">Copyright © 2017-2019 Rica Radu Leonard</div>
+  </div>
+</body>
