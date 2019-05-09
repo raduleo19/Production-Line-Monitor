@@ -233,9 +233,9 @@ char GetRequestedHttpResource(char *req_line, char *file_name,
       if (strcmp(str_token, "htm") == 0) {
         *file_type = 0;
       } else if (strcmp(str_token, "txt") == 0) {
-        *file_type = 2;
+        *file_type = 1;
       } else {
-        *file_type = 3;
+        *file_type = 2;
       }
     }
   }
